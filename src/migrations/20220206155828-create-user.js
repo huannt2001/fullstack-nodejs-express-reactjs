@@ -11,6 +11,12 @@ module.exports = {
       fistName: {
         type: Sequelize.STRING
       },
+      // lastName: {
+      //   type: Sequelize.STRING
+      // },
+      // email: {
+      //   type: Sequelize.STRING
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
