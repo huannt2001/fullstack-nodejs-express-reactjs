@@ -58,6 +58,17 @@ let putCRUD = async (req, res) => {
     })
 }
 
+let deleteCRUD = async (req, res) => {
+    let id = req.query.id;
+    if (id) {
+        await CRUDService.deleteUserById(id);
+        return res.send('Delete the user succeed')
+    } else {
+        return res.send('User not found')
+    }
+
+}
+
 module.exports = {
     getHomePage,
     getAboutPage,
@@ -65,5 +76,6 @@ module.exports = {
     postCRUD,
     displayGetCRUD,
     getEditCRUD,
-    putCRUD
+    putCRUD,
+    deleteCRUD
 }
