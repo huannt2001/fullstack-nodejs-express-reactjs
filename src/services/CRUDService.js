@@ -73,6 +73,7 @@ let updateUserData = (data) => {
         try {
             let user = await db.User.findOne({
                 where: { id: data.id },
+                raw: false
             })
 
             if (user) {
@@ -97,7 +98,8 @@ let deleteUserById = (userId) => {
     return new Promise(async (resolve, reject) => {
         try {
             let user = await db.User.findOne({
-                where: { id: userId }
+                where: { id: userId },
+                raw: false
             })
 
             if (user) {
