@@ -64,7 +64,7 @@ let getAllUsers = (userId) => {
     return new Promise(async (resolve, reject) => {
         try {
             let users = '';
-            if (userId = 'ALL') {
+            if (userId === 'ALL') {
                 users = await db.User.findAll({
                     attributes: {
                         exclude: ['password']
@@ -78,6 +78,7 @@ let getAllUsers = (userId) => {
                         exclude: ['password']
                     }
                 })
+                console.log(users);
             }
             resolve(users)
         } catch (error) {
