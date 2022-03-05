@@ -25,6 +25,8 @@ let initWebRoutes = (app) => {
 
     router.get('/api/allcode', userController.getAllCode)
     router.get('/api/top-doctor-home', doctorController.getDoctorHome); // api lấy thông tin bác sĩ giỏi
+    router.get('/api/get-all-doctor', doctorController.getAllDoctors); // api lấy tất cả thông tin bác sĩ
+    router.post('/api/save-info-doctor', doctorController.postInfoDoctor); // api lưu info thông tin bác sĩ
 
     return app.use("/", router);
 }
